@@ -82,6 +82,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Joshua Ogunseun — Media Buyer & Automation Specialist" },
+      { name: "description", content: "Lead Flow Systems builds scalable lead generation engines using Meta Ads, GoHighLevel automation, and high-converting funnels." },
+      { property: "og:description", content: "Lead Flow Systems builds scalable lead generation engines using Meta Ads, GoHighLevel automation, and high-converting funnels." },
+      { name: "twitter:description", content: "Lead Flow Systems builds scalable lead generation engines using Meta Ads, GoHighLevel automation, and high-converting funnels." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e72f97c1-21b0-4a28-9bcc-f10149c63258/id-preview-0c659197--ec56b160-4950-4a05-98c7-8d6d27b5c7ff.lovable.app-1781628911446.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e72f97c1-21b0-4a28-9bcc-f10149c63258/id-preview-0c659197--ec56b160-4950-4a05-98c7-8d6d27b5c7ff.lovable.app-1781628911446.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
