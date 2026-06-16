@@ -22,7 +22,7 @@ import {
   Star,
 } from "lucide-react";
 import { site } from "@/content/site";
-import portrait from "@/assets/joshua-portrait.jpg";
+import portraitAsset from "@/assets/joshua-portrait.jpg.asset.json";
 import dashboard from "@/assets/dashboard-hero.jpg";
 
 export const Route = createFileRoute("/")({
@@ -237,7 +237,7 @@ function About() {
         <div className="relative">
           <div className="card-surface p-3 max-w-sm mx-auto">
             <img
-              src={portrait}
+              src={portraitAsset.url}
               alt={site.name}
               width={768}
               height={896}
