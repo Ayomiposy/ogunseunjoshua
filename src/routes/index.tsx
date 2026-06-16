@@ -22,7 +22,7 @@ import {
   Star,
 } from "lucide-react";
 import { site } from "@/content/site";
-import portrait from "@/assets/joshua-portrait.jpg";
+import portraitAsset from "@/assets/joshua-portrait.jpg.asset.json";
 import dashboard from "@/assets/dashboard-hero.jpg";
 
 export const Route = createFileRoute("/")({
