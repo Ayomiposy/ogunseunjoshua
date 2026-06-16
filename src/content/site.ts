@@ -10,7 +10,7 @@ export const site = {
   name: "Joshua Ogunseun",
   role: "Media Buyer & Automation Specialist",
   email: "Seunj5304@gmail.com",
-  phone: "+234 814 463 1381",
+  phone: "+2348127713946",
   upworkUrl: "#",
   bookingUrl: "#book",
 
