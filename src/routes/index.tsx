@@ -22,8 +22,9 @@ import {
   Star,
 } from "lucide-react";
 import { site } from "@/content/site";
-import portraitAsset from "@/assets/joshua-portrait.jpg.asset.json";
 import dashboard from "@/assets/dashboard-hero.jpg";
+import joshua from "@/assets/portfolio picture.jpg.jpeg";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,6 +42,7 @@ export const Route = createFileRoute("/")({
           "Scalable lead generation systems powered by Meta Ads, automation, and conversion-focused funnels.",
       },
     ],
+    links: [{ rel: "icon", type: "image/png", href: joshua }],
   }),
   component: Index,
 });
@@ -83,7 +85,7 @@ function Header() {
       <div className="container-x flex h-16 items-center justify-between">
         <a href="#" className="flex items-center gap-2 font-display font-bold text-lg">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
-            JO
+            <img src={logo} alt="Brand logo" />
           </span>
           <span>{site.name}</span>
         </a>
@@ -141,9 +143,7 @@ function Hero() {
             {site.hero.title.split("Meta Ads & Automation")[0]}
             <span className="grad-text">Meta Ads & Automation</span>
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-xl">
-            {site.hero.description}
-          </p>
+          <p className="mt-6 text-lg text-muted-foreground max-w-xl">{site.hero.description}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={site.hero.primaryCta.href} className="btn-primary">
               {site.hero.primaryCta.label} <ArrowRight className="h-4 w-4" />
@@ -205,7 +205,9 @@ function BrandStrip() {
         </p>
         <div className="mt-6 flex flex-wrap justify-center items-center gap-x-10 gap-y-4 text-muted-foreground/70 font-display font-bold tracking-widest">
           {site.brands.map((b) => (
-            <span key={b} className="text-sm sm:text-base">{b}</span>
+            <span key={b} className="text-sm sm:text-base">
+              {b}
+            </span>
           ))}
         </div>
       </div>
@@ -237,7 +239,7 @@ function About() {
         <div className="relative">
           <div className="card-surface p-3 max-w-sm mx-auto">
             <img
-              src={portraitAsset.url}
+              src={joshua}
               alt={site.name}
               width={768}
               height={896}
@@ -262,7 +264,9 @@ function About() {
           </div>
           <div className="mt-7 flex flex-wrap gap-2">
             {site.about.skills.map((s) => (
-              <span key={s} className="chip">{s}</span>
+              <span key={s} className="chip">
+                {s}
+              </span>
             ))}
           </div>
         </div>
@@ -282,7 +286,8 @@ function Services() {
             Done-for-you growth systems
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Everything you need to attract, capture, nurture, and close more leads — built and managed by one team.
+            Everything you need to attract, capture, nurture, and close more leads — built and
+            managed by one team.
           </p>
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -335,7 +340,8 @@ function Process() {
             A proven 5-step growth framework
           </h2>
           <p className="mt-4 text-muted-foreground">
-            No guesswork. Every engagement follows a battle-tested workflow built from 180+ campaigns.
+            No guesswork. Every engagement follows a battle-tested workflow built from 180+
+            campaigns.
           </p>
         </div>
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -392,24 +398,26 @@ function Portfolio() {
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((it) => (
             <article key={it.title} className="card-surface overflow-hidden group">
-              <div className="aspect-[16/10] relative overflow-hidden bg-gradient-to-br from-primary/30 via-primary/10 to-secondary/20">
-                <div className="absolute inset-0 grid place-items-center text-secondary/80 font-display text-5xl font-bold opacity-40">
-                  {it.title.charAt(0)}
+              <a href={it.url} target="_blank">
+                <div className="aspect-[16/10] relative overflow-hidden bg-gradient-to-br from-primary/30 via-primary/10 to-secondary/20">
+                  <div className="absolute inset-0 grid place-items-center text-secondary/80 ">
+                    <img src={it.img} alt="" />
+                  </div>
                 </div>
-                <span className="absolute top-3 left-3 chip !bg-background/70 !backdrop-blur">
-                  {it.category}
-                </span>
-                <span className="absolute top-3 right-3 chip !bg-secondary !text-secondary-foreground !border-secondary">
-                  {it.result}
-                </span>
-              </div>
-              <div className="p-5">
-                <h3 className="font-display font-bold text-lg flex items-center justify-between">
-                  {it.title}
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition" />
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">{it.desc}</p>
-              </div>
+                <div className="p-5 relative">
+                  <span className="absolute top-5 left-3 chip !bg-background/70 !backdrop-blur">
+                    {it.category}
+                  </span>
+                  <span className="absolute top-5 right-3 chip !bg-secondary !text-secondary-foreground !border-secondary">
+                    {it.result}
+                  </span>
+                  <h3 className="font-display mt-10 font-bold text-lg flex items-center justify-between">
+                    {it.title}
+                    <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition" />
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{it.desc}</p>
+                </div>
+              </a>
             </article>
           ))}
         </div>
@@ -425,11 +433,10 @@ function Pricing() {
       <div className="container-x">
         <div className="max-w-2xl">
           <span className="eyebrow">Packages</span>
-          <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Transparent pricing
-          </h2>
+          <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-bold">Transparent pricing</h2>
           <p className="mt-4 text-muted-foreground">
-            Choose the engagement that fits your stage. Every package is customizable — book a call to scope it together.
+            Choose the engagement that fits your stage. Every package is customizable — book a call
+            to scope it together.
           </p>
         </div>
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -485,7 +492,7 @@ function Testimonials() {
           </h2>
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {site.testimonials.map((t) => (
+          {site.testimonials.map((t: any) => (
             <figure key={t.name} className="card-surface p-6 flex flex-col">
               <div className="flex gap-0.5 text-secondary">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -497,7 +504,11 @@ function Testimonials() {
               </blockquote>
               <figcaption className="mt-5 flex items-center gap-3">
                 <span className="grid h-10 w-10 place-items-center rounded-full bg-primary/20 text-primary font-bold text-sm">
-                  {t.initials}
+                  <img
+                    src={t.img}
+                    alt={t.name}
+                    className="h-full w-full rounded-full object-cover"
+                  />
                 </span>
                 <span>
                   <div className="font-semibold text-sm">{t.name}</div>
@@ -550,9 +561,7 @@ function FAQ() {
       <div className="container-x max-w-3xl">
         <div className="text-center">
           <span className="eyebrow">FAQ</span>
-          <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Frequently asked
-          </h2>
+          <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-bold">Frequently asked</h2>
         </div>
         <div className="mt-10 space-y-3">
           {site.faqs.map((f, i) => {
@@ -596,7 +605,8 @@ function CTA() {
             Ready to build a lead system <span className="grad-text">that actually converts?</span>
           </h2>
           <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
-            Book a free strategy call. We'll audit your current funnel, identify the bottlenecks, and show you a clear roadmap to scale — no pitch, just value.
+            Book a free strategy call. We'll audit your current funnel, identify the bottlenecks,
+            and show you a clear roadmap to scale — no pitch, just value.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href={site.bookingUrl} className="btn-primary">
@@ -625,7 +635,8 @@ function Footer() {
             {site.name}
           </div>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-sm">
-            Helping ambitious businesses build scalable lead generation systems through high-converting Meta Ads, intelligent automation, and conversion-focused funnels.
+            Helping ambitious businesses build scalable lead generation systems through
+            high-converting Meta Ads, intelligent automation, and conversion-focused funnels.
           </p>
         </div>
         <div>
@@ -641,7 +652,9 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <div className="text-xs uppercase tracking-widest text-muted-foreground">Get in touch</div>
+          <div className="text-xs uppercase tracking-widest text-muted-foreground">
+            Get in touch
+          </div>
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-secondary" />

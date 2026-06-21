@@ -16,6 +16,7 @@ import charles from "@/assets/charles.jpeg";
 import lara from "@/assets/Lara Kudayisi.jpeg";
 import moshood from "@/assets/moshood.jpeg";
 import shola from "@/assets/shola.jpeg";
+import { url } from "inspector";
 
 export const site = {
   name: "Joshua Ogunseun",
