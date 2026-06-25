@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
           "Scalable lead generation systems powered by Meta Ads, automation, and conversion-focused funnels.",
       },
     ],
-    links: [{ rel: "icon", type: "image/png", href: joshua }],
+    links: [{ rel: "icon", type: "image/png", href: logo }],
   }),
   component: Index,
 });
@@ -609,7 +609,7 @@ function CTA() {
             and show you a clear roadmap to scale — no pitch, just value.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href={site.bookingUrl} className="btn-primary">
+            <a href="https://calendly.com/seunj5304/30min" target="_blank" className="btn-primary">
               <Calendar className="h-4 w-4" /> Book a Free Consultation
             </a>
             <a href={site.upworkUrl} className="btn-ghost">
@@ -630,8 +630,8 @@ function Footer() {
         <div>
           <div className="font-display font-bold text-lg flex items-center gap-2">
             <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
-              JO
-            </span>
+            <img src={logo} alt="Brand logo" />
+          </span>
             {site.name}
           </div>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-sm">

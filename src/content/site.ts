@@ -140,7 +140,7 @@ export const site = {
         result: "12.4× ROAS",
         desc: "Scaled lead flow from 0 to 595+ qualified leads in a month.",
         img: metaAds,
-        url: "https://branions.com/ai-masterclass-and-live-mentorship-2/",
+        url: "https://drive.google.com/file/d/1e8PzJQgLZyMmAetSdVTAOup2581woj78/view?usp=sharing",
       },
       {
         title: "Coaching Funnel",
@@ -265,7 +265,7 @@ export const site = {
     {
       quote:
         "Most marketers talk theory. Joshua ships systems. ROAS climbed from 1.8× to 4.2× in the first quarter.",
-      name: "Charles Odun",
+      name: "Charles Odunm",
       role: "CEO & Digital Expert, BlueVangas",
       initials: "CO",
       img: charles,
