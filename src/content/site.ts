@@ -265,7 +265,7 @@ export const site = {
     {
       quote:
         "Most marketers talk theory. Joshua ships systems. ROAS climbed from 1.8× to 4.2× in the first quarter.",
-      name: "Charles Odunm",
+      name: "Charles Odum",
       role: "CEO & Digital Expert, BlueVangas",
       initials: "CO",
       img: charles,
